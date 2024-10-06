@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="w-full pt-20 pb-10" id="contact">
       {/* background grid */}
       <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img
+        <Image
           src="/footer-grid.svg"
           alt="grid"
           className="w-full h-full opacity-50 "
@@ -21,7 +21,7 @@ const Footer = () => {
           with secure and scalable solutions?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Let's connect to explore how I can help you build robust, full-stack
+          Lets connect to explore how I can help you build robust, full-stack
           applications with cutting-edge security.
         </p>
         <a href="mailto:handapangodageachinthana@gmail.com">
