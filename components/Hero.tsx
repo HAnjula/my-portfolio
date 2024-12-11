@@ -1,10 +1,21 @@
 import { FaLocationArrow } from "react-icons/fa6";
-
+import { IoCopyOutline } from "react-icons/io5";
 import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TestGenerateEffect";
+import { useState } from "react";
 
 const Hero = () => {
+  const [downloaded, setDownloaded] = useState(false);
+  const handleDownloaded = () => {
+    const link = document.createElement("a");
+    link.href = "/Anjula_CV.pdf"; // Adjust the path to your CV file if necessary
+    link.download = "Anjula_CV.pdf"; // Specify the name of the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setDownloaded(true);
+  };
   return (
     <div className="pb-20 pt-36">
       {/**
@@ -62,11 +73,24 @@ const Hero = () => {
           </p>
 
           <a href="#about">
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
+            <div className="flex items-center justify-start space-x-4">
+              <MagicButton
+                title="Show my work"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
+
+              {/* Vertical Line */}
+              <div className="w-px h-10 lg:mt-10 bg-gray-500"></div>
+
+              <MagicButton
+                title={downloaded ? "CV is Downloaded!" : "Download my CV"}
+                handleClick={handleDownloaded}
+                icon={<IoCopyOutline />}
+                position="right"
+                otherClasses="!bg-[#161A31]"
+              />
+            </div>
           </a>
         </div>
       </div>

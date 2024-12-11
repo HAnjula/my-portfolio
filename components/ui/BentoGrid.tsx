@@ -14,16 +14,6 @@ export const BentoGrid = ({
   className?: string;
   children?: React.ReactNode;
 }) => {
-  const [downloaded, setDownloaded] = useState(false);
-  const handleDownloaded = () => {
-    const link = document.createElement("a");
-    link.href = "/CV.pdf"; // Adjust the path to your CV file if necessary
-    link.download = "CV.pdf"; // Specify the name of the downloaded file
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    setDownloaded(true);
-  };
   return (
     <div
       className={cn(
@@ -33,15 +23,6 @@ export const BentoGrid = ({
       )}
     >
       {children}
-      <div className="lg:ml-10">
-        <MagicButton
-          title={downloaded ? "CV is Downloaded!" : "Download my CV"}
-          handleClick={handleDownloaded}
-          icon={<IoCopyOutline />}
-          position="left"
-          otherClasses="!bg-[#161A31]"
-        />
-      </div>
     </div>
   );
 };
