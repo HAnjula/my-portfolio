@@ -6,8 +6,8 @@ const Experience = () => {
   const [downloaded, setDownloaded] = useState(false);
   const handleDownloaded = () => {
     const link = document.createElement("a");
-    link.href = "/Anjula_CV.pdf"; // Adjust the path to your CV file if necessary
-    link.download = "Anjula_CV.pdf"; // Specify the name of the downloaded file
+    link.href = "/Anjula_Handapangoda_CV.pdf"; // Adjust the path to your CV file if necessary
+    link.download = "Anjula_Handapangoda_CV.pdf"; // Specify the name of the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
