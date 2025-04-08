@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import StarsCanvas from "../components/StarBackground";
-
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
@@ -28,7 +26,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <StarsCanvas />
           {children}
         </ThemeProvider>
       </body>

@@ -67,12 +67,18 @@
 }
 
 @layer base {
+  html {
+    scroll-padding-top: 5rem; /* 👈 Prevent nav overlap on anchor scroll */
+  }
+
   * {
     @apply border-border !scroll-smooth;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   button {
     @apply active:outline-none;
   }
